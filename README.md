@@ -1,3 +1,20 @@
+# [API for HTMX](https://wordpress.org/plugins/api-for-htmx/) plugin Timber integration demo
+## Fork info
+
+Adds basic configuration for API for HTMX plugin to use Timber template path `views/partials-htmx` for "htmx enabled" template partials.
+
+These can be rendered as regular parts of the layout on initial render, eg. `{% include "partials-htmx/timber-demo.twig" %} and/or can be called with HTMX AJAX calls to be rendered "on the fly".
+
+Regular Timber rendering context based on regular WordPress routing functionality is not available the same way when rendering partials during HTMX requests, and it requires some consideration based on use case. Rendering existing `views/partials/tease*.twig` or related partials would be useful for use with a ajax infinite scroll or filtering functionalities.
+
+Example video shows the theme running on a empty WP 6.6.1 site running in VVV development server.
+
+## Installation and testing
+
+Install starter-theme project as usual and but install and enable the HTMX plugin afterwards `wp plugin install --activate api-for-htmx`.
+
+After this, re-save site permalink settings (at `/wp-admin/options-permalink.php`) manually to workaround a [permalink fushing issue](https://github.com/TCattd/HTMX-API-WP/discussions/9) during install. Default permalink setting using post id's may also be incompatible so it may need to be changed to any other option.
+
 # The Timber Starter Theme
 
 [![Build Status](https://travis-ci.com/timber/starter-theme.svg?branch=master)](https://travis-ci.com/github/timber/starter-theme)

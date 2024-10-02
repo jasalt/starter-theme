@@ -1,6 +1,24 @@
 {% extends 'layouts/base.twig' %}
 
+
+
 {% block content %}
+  <hr>
+
+  <h2>HTMX test page</h2>
+  <p>Test page for advanced AJAX and server-side hypertext rendering technology.</p>
+  <p>Site uses <a target="_blank" href="https://wordpress.org/plugins/api-for-htmx/">API for HTMX WordPress plugin</a> and related templates are stored at <code>views/partials-htmx/</code>. This page's template is stored at <code>views/templates/page-htmx-test.twig</code>.</p>
+
+  <h3>Demos</h3>
+
+  <button class="btn" hx-get="/wp-htmx/v1/htmx-demo"   hx-swap="innerHTML" hx-target="#htmx-container">Call htmx-demo.htmx.php</button>
+  <button class="btn" hx-get="/wp-htmx/v1/test-timber" hx-swap="innerHTML" hx-target="#htmx-container">Call test-timber.htmx.php (renders test-timber.twig)</button>
+
+  <div id="htmx-container" style="border: 1px solid black; margin: 1em; padding: 1em;">{% include "partials-htmx/test-timber-htmx.twig" %}</div>
+
+  <hr>
+
+  <h1>Timber starter theme content continues</h1>
     <h2>{{ foo }}</h2>
     {% for post in posts %}
         {% include ['partials/tease-' ~ post.type ~ '.twig', 'partials/tease.twig'] %}
