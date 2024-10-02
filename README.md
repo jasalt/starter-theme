@@ -9,6 +9,10 @@ Regular Timber rendering context based on regular WordPress routing functionalit
 
 Example video shows the theme running on a empty WP 6.6.1 site running in VVV development server.
 
+
+https://github.com/user-attachments/assets/2db63a00-0da3-4b66-bd02-b30e8763c057
+
+
 ## Installation and testing
 
 Install starter-theme project as usual and but install and enable the HTMX plugin afterwards `wp plugin install --activate api-for-htmx`.
